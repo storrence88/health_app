@@ -4,9 +4,9 @@ Rails.application.routes.draw do
   devise_for :users, path: '', path_names: { sign_in: 'login', sign_up: 'signup' }
   
   authenticated :user do
+    root 'dashboard#index', as: :authenticated_root
     resource :users
-    root 'users#index'
   end
 
-  # root 'welcome#index'
+  root 'welcome#index'
 end
