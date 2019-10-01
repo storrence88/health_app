@@ -1,24 +1,45 @@
 <h2>Sign up</h2>
 
 <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-  <%= f.error_notification %>
-
   <div class="form-inputs">
-    <%= f.input :email,
-                required: true,
-                autofocus: true,
-                input_html: { autocomplete: "email" }%>
-    <%= f.input :password,
-                required: true,
-                hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length),
-                input_html: { autocomplete: "new-password" } %>
-    <%= f.input :password_confirmation,
-                required: true,
-                input_html: { autocomplete: "new-password" } %>
+    <div class="form-group">
+      <%= f.input :first_name,
+                  autofocus: true,
+                  label: false,
+                  input_html: { placeholder: 'First Name', class: 'form-control' } %>
+    </div>
+    <div class="form-group">
+      <%= f.input :last_name,
+                  autofocus: true,
+                  label: false,
+                  input_html: { placeholder: 'Last Name', class: 'form-control' } %>   
+    </div>
+    <div class="form-group">
+      <%= f.input :email,
+                  autofocus: true,
+                  label: false,
+                  input_html: { autocomplete: "email", placeholder: 'Email', class: 'form-control' }%>
+    </div>
+    <div class="form-group">
+      <%= f.input :password,
+                  hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length),
+                  label: false,
+                  input_html: { autocomplete: "new-password", placeholder: 'Password', class: 'form-control' } %>
+    </div>
+    <div class="form-group">
+      <%= f.input :password_confirmation,
+                  label: false,
+                  input_html: { autocomplete: "new-password", placeholder: 'Password Confirmation', class: 'form-control' } %>
+    </div>
+    <div class="form-group">
+      <%= f.input :starting_weight,
+                  label: false,
+                  input_html: { placeholder: 'Please enter your starting weight...', class: 'form-control' } %>   
+    </div>
   </div>
 
   <div class="form-actions">
-    <%= f.button :submit, "Sign up" %>
+    <%= f.button :submit, "Register", class: 'btn btn-primary' %>
   </div>
 <% end %>
 
