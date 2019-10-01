@@ -8,6 +8,8 @@ require("turbolinks").start()
 require("@rails/activestorage").start()
 require("channels")
 
+console.log('Hello World from Webpacker');
+
 import '../stylesheets/application'
 import 'bootstrap'
 

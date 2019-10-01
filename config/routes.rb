@@ -5,7 +5,7 @@ Rails.application.routes.draw do
     path: '', path_names: { sign_in: 'login', sign_up: 'signup' }
   
   authenticated :user do
-    root 'dashboard#index', as: :authenticated_root
+    root 'users#index', as: :authenticated_root
     resource :users
   end
 

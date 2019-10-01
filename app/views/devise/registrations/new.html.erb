@@ -4,41 +4,35 @@
   <div class="form-inputs">
     <div class="form-group">
       <%= f.input :first_name,
-                  required: true,
                   autofocus: true,
                   label: false,
                   input_html: { placeholder: 'First Name', class: 'form-control' } %>
     </div>
     <div class="form-group">
       <%= f.input :last_name,
-                  required: true,
                   autofocus: true,
                   label: false,
                   input_html: { placeholder: 'Last Name', class: 'form-control' } %>   
     </div>
     <div class="form-group">
       <%= f.input :email,
-                  required: true,
                   autofocus: true,
                   label: false,
                   input_html: { autocomplete: "email", placeholder: 'Email', class: 'form-control' }%>
     </div>
     <div class="form-group">
       <%= f.input :password,
-                  required: true,
                   hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length),
                   label: false,
                   input_html: { autocomplete: "new-password", placeholder: 'Password', class: 'form-control' } %>
     </div>
     <div class="form-group">
       <%= f.input :password_confirmation,
-                  required: true,
                   label: false,
                   input_html: { autocomplete: "new-password", placeholder: 'Password Confirmation', class: 'form-control' } %>
     </div>
     <div class="form-group">
       <%= f.input :starting_weight,
-                  required: true,
                   label: false,
                   input_html: { placeholder: 'Please enter your starting weight...', class: 'form-control' } %>   
     </div>
