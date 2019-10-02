@@ -9,6 +9,14 @@ class EntriesController < ApplicationController
   end
 
   def create
+    entry = Entry.new(entry_params)
+    if entry.save
+      flash[:success] = 'Successfully created new weigh-in!'
+      redirect_to authenticated_root_path
+    else
+      flash[:error] = entry.errors.full_messages
+      render :new
+    end
   end
 
   def edit
@@ -26,5 +34,9 @@ class EntriesController < ApplicationController
 
   def set_entry
     @entry = Entry.find(params[:id])
+  end
+
+  def entry_params
+    params.require(:entry).permit(:user_id, :date, :weight)
   end
 end
