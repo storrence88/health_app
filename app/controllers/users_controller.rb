@@ -2,8 +2,10 @@
 
 class UsersController < ApplicationController
   before_action :authenticate_user!
-  
+  helper_method :users
+
   def index
+    @users = User.all
   end
 
   def show
@@ -23,4 +25,8 @@ class UsersController < ApplicationController
 
   def destroy
   end
+
+  private
+
+  attr_reader :users
 end
