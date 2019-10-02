@@ -2,6 +2,7 @@
 
 class EntriesController < ApplicationController
   before_action :set_entry, only: %i[edit update destroy]
+  helper_method :entry
 
   def new
     @entry = Entry.new
@@ -20,6 +21,8 @@ class EntriesController < ApplicationController
   end
 
   private
+
+  attr_reader :entry
 
   def set_entry
     @entry = Entry.find(params[:id])

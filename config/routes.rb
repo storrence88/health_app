@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   authenticated :user do
     root 'users#index', as: :authenticated_root
     resource :users
+    resources :entries, only: %i[new create]
   end
 
   root 'welcome#index'
